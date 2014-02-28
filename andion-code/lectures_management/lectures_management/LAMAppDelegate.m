@@ -2,10 +2,7 @@
 //  LAMAppDelegate.m
 //  lectures_management
 //
-//  Created by Lucas Andión Montáns on 27/02/14.
-//  Copyright (c) 2014 Lucas Andión Montáns. All rights reserved.
-//
-
+#import "LAMStundent.h"
 #import "LAMAppDelegate.h"
 
 @implementation LAMAppDelegate
@@ -13,7 +10,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    return YES;
+  LAMStundent *stundent1 = [[LAMStundent alloc] initWithName:@"Lucas"
+                                                     surname:@"Andion Montáns"
+                                                     andMail:@"me@email.com"];
+  
+  LAMStundent *stundent2 = [[LAMStundent alloc] initWithName:@"Joaquín"
+                                                     surname:@"Tillizos"
+                                                     andMail:@"me2@me.com"];
+
+  NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+  
+  NSArray *tmpArray = @[stundent1, stundent2];
+
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+  
+  [userDefault setObject:[NSKeyedArchiver archivedDataWithRootObject:tmpArray] forKey:@"stundents"];
+  
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

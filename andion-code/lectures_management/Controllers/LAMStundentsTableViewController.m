@@ -43,15 +43,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   
   // Creamos alimnos de prueba pa meter en el array
-  LAMStundent *stundent1 = [[LAMStundent alloc] initWithName:@"Lucas"
-                                                     surname:@"Andion"
-                                                     andMail:@"me@me.com"];
   
-  LAMStundent *stundent2 = [[LAMStundent alloc] initWithName:@"Lucas 2"
-                                                     surname:@"Andion 2"
-                                                     andMail:@"me2@me.com"];
+  _stundents = [[NSMutableArray alloc] init];
   
-  _stundents = [[NSMutableArray alloc] initWithArray:@[stundent1,stundent2]];
+  [self loadData];
   
 }
 
@@ -171,6 +166,14 @@
     //    }
   }
   
+}
+
+#pragma mark - Métodos privados
+
+- (void)loadData{
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  NSData *stundentsData = [userDefaults objectForKey:@"stundents"];
+  _stundents = [NSKeyedUnarchiver unarchiveObjectWithData:stundentsData];
 }
 
 @end
