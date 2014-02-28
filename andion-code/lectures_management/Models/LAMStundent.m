@@ -31,6 +31,22 @@
   return [_name stringByAppendingFormat:@" %@", _surname];
 }
 
+#pragma mark - SQlite access
+- (id)initWithDictionary:(NSDictionary *)dic {
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+  self = [super init];
+  if (self){
+    _name = [dic objectForKey:@"nombre"];;
+    _surname = [dic objectForKey:@"apellidos"];
+    _email = [dic objectForKey:@"email"];
+    _city = [dic objectForKey:@"ciudad"];
+    _avatarUrl = [dic objectForKey:@"avatar_url"];
+  }
+  return self;
+}
+
 #pragma mark - KeyedArchive (Capa de almacenamiento)
 // Cualquier objeto tiene estos dos métodos, en NSObject está implementado como un "protocolo"
 

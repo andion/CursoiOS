@@ -13,12 +13,14 @@
            surname:(NSString *)aSurname
            andMail:(NSString *)anEmail;
 
+- (id)initWithDictionary:(NSDictionary *)dic;
+
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *surname;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSString *avatarUrl;
 
--(NSString *)fullName;
+- (NSString *)fullName;
 
 @end

@@ -25,6 +25,10 @@
 		532E01CF18BF6B9C0000DCD1 /* LAMStundentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 532E01CE18BF6B9C0000DCD1 /* LAMStundentsTableViewController.m */; };
 		532E01D318BF73430000DCD1 /* LAMStundentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 532E01D218BF73430000DCD1 /* LAMStundentCell.m */; };
 		53F75E7318C08D6200E8D914 /* LAMStundentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F75E7218C08D6200E8D914 /* LAMStundentDetailViewController.m */; };
+		53F75E7E18C0B1DB00E8D914 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 53F75E7B18C0B1DB00E8D914 /* db.sqlite */; };
+		53F75E7F18C0B1DB00E8D914 /* SQLiteAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F75E7D18C0B1DB00E8D914 /* SQLiteAccess.m */; };
+		53F75E8118C0B22400E8D914 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F75E8018C0B22400E8D914 /* libsqlite3.dylib */; };
+		53F75E8518C0B9CF00E8D914 /* SQLiteAccess+Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F75E8418C0B9CF00E8D914 /* SQLiteAccess+Lecture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,12 @@
 		532E01D218BF73430000DCD1 /* LAMStundentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAMStundentCell.m; sourceTree = "<group>"; };
 		53F75E7118C08D6200E8D914 /* LAMStundentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAMStundentDetailViewController.h; sourceTree = "<group>"; };
 		53F75E7218C08D6200E8D914 /* LAMStundentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAMStundentDetailViewController.m; sourceTree = "<group>"; };
+		53F75E7B18C0B1DB00E8D914 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite; path = SQLite/db.sqlite; sourceTree = "<group>"; };
+		53F75E7C18C0B1DB00E8D914 /* SQLiteAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteAccess.h; sourceTree = "<group>"; };
+		53F75E7D18C0B1DB00E8D914 /* SQLiteAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteAccess.m; sourceTree = "<group>"; };
+		53F75E8018C0B22400E8D914 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		53F75E8318C0B9CF00E8D914 /* SQLiteAccess+Lecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SQLiteAccess+Lecture.h"; sourceTree = "<group>"; };
+		53F75E8418C0B9CF00E8D914 /* SQLiteAccess+Lecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SQLiteAccess+Lecture.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F75E8118C0B22400E8D914 /* libsqlite3.dylib in Frameworks */,
 				532E019118BF56180000DCD1 /* CoreGraphics.framework in Frameworks */,
 				532E019318BF56180000DCD1 /* UIKit.framework in Frameworks */,
 				532E01C018BF66490000DCD1 /* MapKit.framework in Frameworks */,
@@ -94,6 +105,8 @@
 		532E018218BF56180000DCD1 = {
 			isa = PBXGroup;
 			children = (
+				53F75E8218C0B98400E8D914 /* Categories */,
+				53F75E7A18C0B1DB00E8D914 /* SQLite */,
 				532E01D018BF73020000DCD1 /* Views */,
 				532E01CC18BF6B050000DCD1 /* Controllers */,
 				532E01C818BF6A010000DCD1 /* Models */,
@@ -117,6 +130,7 @@
 		532E018D18BF56180000DCD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53F75E8018C0B22400E8D914 /* libsqlite3.dylib */,
 				532E01BF18BF66490000DCD1 /* MapKit.framework */,
 				532E018E18BF56180000DCD1 /* Foundation.framework */,
 				532E019018BF56180000DCD1 /* CoreGraphics.framework */,
@@ -140,6 +154,7 @@
 		532E019518BF56180000DCD1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				53F75E7B18C0B1DB00E8D914 /* db.sqlite */,
 				532E019618BF56180000DCD1 /* lectures_management-Info.plist */,
 				532E019718BF56180000DCD1 /* InfoPlist.strings */,
 				532E019A18BF56180000DCD1 /* main.m */,
@@ -193,6 +208,25 @@
 				532E01D218BF73430000DCD1 /* LAMStundentCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		53F75E7A18C0B1DB00E8D914 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				53F75E7C18C0B1DB00E8D914 /* SQLiteAccess.h */,
+				53F75E7D18C0B1DB00E8D914 /* SQLiteAccess.m */,
+			);
+			name = SQLite;
+			path = lectures_management/SQLite;
+			sourceTree = "<group>";
+		};
+		53F75E8218C0B98400E8D914 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				53F75E8318C0B9CF00E8D914 /* SQLiteAccess+Lecture.h */,
+				53F75E8418C0B9CF00E8D914 /* SQLiteAccess+Lecture.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +315,7 @@
 				532E01C218BF68520000DCD1 /* Images.xcassets in Resources */,
 				532E01BE18BF56730000DCD1 /* main_interface.storyboard in Resources */,
 				532E019918BF56180000DCD1 /* InfoPlist.strings in Resources */,
+				53F75E7E18C0B1DB00E8D914 /* db.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,8 +338,10 @@
 				53F75E7318C08D6200E8D914 /* LAMStundentDetailViewController.m in Sources */,
 				532E01D318BF73430000DCD1 /* LAMStundentCell.m in Sources */,
 				532E019F18BF56180000DCD1 /* LAMAppDelegate.m in Sources */,
+				53F75E8518C0B9CF00E8D914 /* SQLiteAccess+Lecture.m in Sources */,
 				532E01CB18BF6A240000DCD1 /* LAMStundent.m in Sources */,
 				532E01CF18BF6B9C0000DCD1 /* LAMStundentsTableViewController.m in Sources */,
+				53F75E7F18C0B1DB00E8D914 /* SQLiteAccess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

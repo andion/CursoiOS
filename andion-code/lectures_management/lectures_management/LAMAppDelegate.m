@@ -9,6 +9,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+  NSLog(@"%@", [SQLiteAccess getName]);
+  LAMStundent *stu = [SQLiteAccess getStundent:@"pablo@pabloformoso.com"];
+  NSLog(@"%@", [stu fullName]);
+#endif  
 
   LAMStundent *stundent1 = [[LAMStundent alloc] initWithName:@"Lucas"
                                                      surname:@"Andion Montáns"
@@ -21,10 +27,6 @@
   NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
   
   NSArray *tmpArray = @[stundent1, stundent2];
-
-#ifndef NDEBUG
-  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
-#endif
   
   [userDefault setObject:[NSKeyedArchiver archivedDataWithRootObject:tmpArray] forKey:@"stundents"];
   

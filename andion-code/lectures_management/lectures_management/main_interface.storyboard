@@ -368,7 +368,7 @@
         <scene sceneID="PZt-Xv-oh0">
             <objects>
                 <navigationController title="Classes" definesPresentationContext="YES" id="oES-is-A1X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Classes" image="book" badgeValue="NEW" id="Y1f-3d-wSR"/>
+                    <tabBarItem key="tabBarItem" title="Lectures" image="book" id="Y1f-3d-wSR"/>
                     <navigationItem key="navigationItem" id="vkC-8j-Vt6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="axq-FW-78z">
                         <autoresizingMask key="autoresizingMask"/>
