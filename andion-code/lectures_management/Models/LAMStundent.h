@@ -19,4 +19,6 @@
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSString *avatarUrl;
 
+-(NSString *)fullName;
+
 @end

@@ -66,7 +66,7 @@
                                     <outlet property="cityLabel" destination="JlI-SN-eYY" id="ygj-l8-UkN"/>
                                     <outlet property="emailLabel" destination="MXN-9r-wzT" id="ftI-yF-sEX"/>
                                     <outlet property="nameLabel" destination="hWF-qg-sn0" id="96h-O0-0X2"/>
-                                    <segue destination="R7X-S1-9Ti" kind="push" id="owU-yQ-BJN"/>
+                                    <segue destination="R7X-S1-9Ti" kind="push" identifier="show_detail" id="owU-yQ-BJN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -186,11 +186,11 @@
             </objects>
             <point key="canvasLocation" x="1137" y="424"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Resources-->
         <scene sceneID="yi2-Cm-AHg">
             <objects>
                 <navigationController definesPresentationContext="YES" id="NFr-Nb-0Ax" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mg9-I1-3GZ"/>
+                    <tabBarItem key="tabBarItem" title="Resources" image="notepad" id="mg9-I1-3GZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rnz-fp-y5A">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -285,11 +285,11 @@
             </objects>
             <point key="canvasLocation" x="1137" y="1282"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Map-->
         <scene sceneID="eIP-EZ-MxZ">
             <objects>
                 <navigationController definesPresentationContext="YES" id="fxb-cd-HDE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="duE-oy-dLe"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="duE-oy-dLe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2M6-WH-QZQ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -368,7 +368,7 @@
         <scene sceneID="PZt-Xv-oh0">
             <objects>
                 <navigationController title="Classes" definesPresentationContext="YES" id="oES-is-A1X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Classes" badgeValue="NEW" id="Y1f-3d-wSR"/>
+                    <tabBarItem key="tabBarItem" title="Classes" image="book" badgeValue="NEW" id="Y1f-3d-wSR"/>
                     <navigationItem key="navigationItem" id="vkC-8j-Vt6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="axq-FW-78z">
                         <autoresizingMask key="autoresizingMask"/>
@@ -381,10 +381,10 @@
             </objects>
             <point key="canvasLocation" x="591" y="424"/>
         </scene>
-        <!--View Controller - StuNdent detail-->
+        <!--Stundent Detail View Controller - StuNdent detail-->
         <scene sceneID="5su-ML-baH">
             <objects>
-                <viewController id="R7X-S1-9Ti" sceneMemberID="viewController">
+                <viewController id="R7X-S1-9Ti" customClass="LAMStundentDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mKq-Ld-tsd"/>
                         <viewControllerLayoutGuide type="bottom" id="b77-w9-NZ0"/>
@@ -392,9 +392,41 @@
                     <view key="view" contentMode="scaleToFill" id="9po-4n-UXk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6u-Ji-KLv">
+                                <rect key="frame" x="0.0" y="-5" width="320" height="290"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lucas Andión" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tG2-wu-pgo">
+                                <rect key="frame" x="20" y="322" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moraña" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dJ-5b-pH5">
+                                <rect key="frame" x="20" y="380" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="andion@gmail.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80x-pU-dKK">
+                                <rect key="frame" x="20" y="351" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.35093978802213643" blue="0.43864639945652173" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="StuNdent detail" id="kDr-d8-Ni5"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="b6u-Ji-KLv" id="SD6-Ry-9Sf"/>
+                        <outlet property="cityLabel" destination="9dJ-5b-pH5" id="DSW-WX-SmP"/>
+                        <outlet property="emailLabel" destination="80x-pU-dKK" id="csQ-kL-MNT"/>
+                        <outlet property="nameLabel" destination="tG2-wu-pgo" id="3PE-rg-4sG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EF-yj-znT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -404,7 +436,7 @@
         <scene sceneID="Bpg-Am-kxq">
             <objects>
                 <navigationController title="StuNdents" definesPresentationContext="YES" id="qq6-ms-paI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="StuNdents" image="Users" id="8vw-xP-vHr"/>
+                    <tabBarItem key="tabBarItem" title="StuNdents" image="user" id="8vw-xP-vHr"/>
                     <navigationItem key="navigationItem" id="Olt-Q8-zfm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yob-9b-4gB">
                         <autoresizingMask key="autoresizingMask"/>
@@ -419,7 +451,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Users" width="32" height="21"/>
+        <image name="book" width="18" height="26"/>
+        <image name="map" width="26" height="21"/>
+        <image name="notepad" width="22" height="28"/>
+        <image name="user" width="24" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

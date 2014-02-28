@@ -24,6 +24,7 @@
 		532E01CB18BF6A240000DCD1 /* LAMStundent.m in Sources */ = {isa = PBXBuildFile; fileRef = 532E01CA18BF6A240000DCD1 /* LAMStundent.m */; };
 		532E01CF18BF6B9C0000DCD1 /* LAMStundentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 532E01CE18BF6B9C0000DCD1 /* LAMStundentsTableViewController.m */; };
 		532E01D318BF73430000DCD1 /* LAMStundentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 532E01D218BF73430000DCD1 /* LAMStundentCell.m */; };
+		53F75E7318C08D6200E8D914 /* LAMStundentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F75E7218C08D6200E8D914 /* LAMStundentDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		532E01CE18BF6B9C0000DCD1 /* LAMStundentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAMStundentsTableViewController.m; sourceTree = "<group>"; };
 		532E01D118BF73430000DCD1 /* LAMStundentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAMStundentCell.h; sourceTree = "<group>"; };
 		532E01D218BF73430000DCD1 /* LAMStundentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAMStundentCell.m; sourceTree = "<group>"; };
+		53F75E7118C08D6200E8D914 /* LAMStundentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAMStundentDetailViewController.h; sourceTree = "<group>"; };
+		53F75E7218C08D6200E8D914 /* LAMStundentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAMStundentDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,8 @@
 			children = (
 				532E01CD18BF6B9C0000DCD1 /* LAMStundentsTableViewController.h */,
 				532E01CE18BF6B9C0000DCD1 /* LAMStundentsTableViewController.m */,
+				53F75E7118C08D6200E8D914 /* LAMStundentDetailViewController.h */,
+				53F75E7218C08D6200E8D914 /* LAMStundentDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				532E019B18BF56180000DCD1 /* main.m in Sources */,
+				53F75E7318C08D6200E8D914 /* LAMStundentDetailViewController.m in Sources */,
 				532E01D318BF73430000DCD1 /* LAMStundentCell.m in Sources */,
 				532E019F18BF56180000DCD1 /* LAMAppDelegate.m in Sources */,
 				532E01CB18BF6A240000DCD1 /* LAMStundent.m in Sources */,

@@ -27,4 +27,8 @@
   return self;
 }
 
+-(NSString *)fullName {
+  return [_name stringByAppendingFormat:@" %@", _surname];
+}
+
 @end

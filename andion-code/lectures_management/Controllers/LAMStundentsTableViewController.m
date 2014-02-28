@@ -9,6 +9,7 @@
 #import "LAMStundentsTableViewController.h"
 #import "LAMStundent.h"
 #import "LAMStundentCell.h"
+#import "LAMStundentDetailViewController.h"
 
 @interface LAMStundentsTableViewController ()
   // Todo lo que metemos aquí será privado
@@ -92,7 +93,7 @@
   
   LAMStundent *tmp = [_stundents objectAtIndex:indexPath.row];
   // Configure the cell... Aquí es donde le decimos que ponemos en cada celda
-  [cell.nameLabel setText:tmp.name];
+  [cell.nameLabel setText:[tmp fullName]];
   [cell.cityLabel setText:tmp.city];
   [cell.emailLabel setText:tmp.email];
   
@@ -147,8 +148,29 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  // Get the new view controller using [segue destinationViewController].
+  // Pass the selected object to the new view controller.
+  
+  // Primero vemos que elemento se ha seleccionado en la vista con un metodo de la table.
+  NSIndexPath *selected = [self.tableView indexPathForSelectedRow];
+
+  // Lo copiamos a un temporal
+  LAMStundent *tmp = [_stundents objectAtIndex:selected.row];
+  
+  //Identificamos el segue (El 'show_detail' lo hemos puesto en el identificador en el storyboard
+  if([segue.identifier isEqualToString:@"show_detail"]) {
+    LAMStundentDetailViewController *destinationController = segue.destinationViewController;
+    
+    [destinationController performSelector:@selector(loadData:) withObject:tmp];
+    
+    // // Tb se puede hacer generico así
+    // id destinationcontroller = destinationController = segue.destinationViewController;
+    // // Y luego comprobando que responde al metodo que necesitamos (pq podria ser cualquier controlador)
+    //    if([destinationController respondsToSelector:@selector(loadData:)]){
+    //      [destinationController performSelector:@selector(loadData:) withObject:tmp];
+    //    }
+  }
+  
 }
 
 @end
