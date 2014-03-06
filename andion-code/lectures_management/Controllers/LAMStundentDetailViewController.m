@@ -5,6 +5,7 @@
 
 #import "LAMStundentDetailViewController.h"
 #import "LAMStundent.h"
+#import "UIImageView+AFNetworking.h"
 
 // Todo lo que va en interface es privado
 @interface LAMStundentDetailViewController ()
@@ -35,6 +36,12 @@
   [_nameLabel setText:[_stundent fullName]];
   [_emailLabel setText:_stundent.email];
   [_cityLabel setText:_stundent.city];
+  
+  // Crear la url con el string de la imagen
+  // llamar a la propiedad del imageview para q cargue la imagen desde la url
+  NSURL *imgUrl = [NSURL URLWithString:_stundent.avatarUrl];
+  [_avatarImageView setImageWithURL:imgUrl
+                   placeholderImage:[UIImage imageNamed:@"profile-placeholder.png"]];
 }
 
 - (void)didReceiveMemoryWarning
