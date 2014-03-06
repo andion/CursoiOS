@@ -16,6 +16,7 @@
   NSLog(@"%@", [stu fullName]);
 #endif  
 
+  /* // En caso de hacerlo con NSKeyedArchiver
   LAMStundent *stundent1 = [[LAMStundent alloc] initWithName:@"Lucas"
                                                      surname:@"Andion Montáns"
                                                      andMail:@"me@email.com"];
@@ -29,6 +30,7 @@
   NSArray *tmpArray = @[stundent1, stundent2];
   
   [userDefault setObject:[NSKeyedArchiver archivedDataWithRootObject:tmpArray] forKey:@"stundents"];
+  */
   
   return YES;
 }

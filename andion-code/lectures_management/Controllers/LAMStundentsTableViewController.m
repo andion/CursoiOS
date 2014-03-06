@@ -171,9 +171,10 @@
 #pragma mark - Métodos privados
 
 - (void)loadData{
-  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-  NSData *stundentsData = [userDefaults objectForKey:@"stundents"];
-  _stundents = [NSKeyedUnarchiver unarchiveObjectWithData:stundentsData];
+//  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//  NSData *stundentsData = [userDefaults objectForKey:@"stundents"];
+  
+  _stundents = [[NSMutableArray alloc] initWithArray:[SQLiteAccess getAllStundents]] ;
 }
 
 @end

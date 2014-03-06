@@ -28,9 +28,14 @@
   
   NSString *query = @"SELECT * FROM alumnos";
   
-  NSArray *array = [SQLiteAccess selectManyRowsWithSQL:query];
+  NSArray *tmpArray = [SQLiteAccess selectManyRowsWithSQL:query];
+  NSMutableArray *returnArray = [[NSMutableArray alloc] init] ;
   
-  return [[NSArray alloc] initWithArray:array];
+  for(NSDictionary *dic in tmpArray) {
+    LAMStundent *student = [[LAMStundent alloc] initWithDictionary:dic];
+    [returnArray addObject:student];
+  }
+  return returnArray;
 }
 
 @end
