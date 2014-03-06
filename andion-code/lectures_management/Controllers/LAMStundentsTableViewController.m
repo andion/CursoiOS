@@ -11,6 +11,9 @@
 #import "LAMStundentCell.h"
 #import "LAMStundentDetailViewController.h"
 
+#import "LAMStundentsXMLService.h" //Para leer el xml del server
+
+
 @interface LAMStundentsTableViewController ()
   // Todo lo que metemos aquí será privado
   @property(nonatomic, strong)NSMutableArray *stundents; //Mutable pq lo vamos a modificar
@@ -171,10 +174,39 @@
 #pragma mark - Métodos privados
 
 - (void)loadData{
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+// Carga de datos desde userDefault
 //  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 //  NSData *stundentsData = [userDefaults objectForKey:@"stundents"];
   
-  _stundents = [[NSMutableArray alloc] initWithArray:[SQLiteAccess getAllStundents]] ;
+// Carga de datos DESDE SQLITE3
+// _stundents = [[NSMutableArray alloc] initWithArray:[SQLiteAccess getAllStundents]] ;
+  
+  // Desde el xml en el server
+  
+  LAMStundentsXMLService *ws = [[LAMStundentsXMLService alloc] init];
+  [ws getStundentsXML:self];
+}
+
+-(void)setData:(NSMutableArray *)anArray {
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif  
+// Carga asíncrona de datos, por lo que tenemos que crear los objetos para almacenarlo
+  _stundents = [[NSMutableArray alloc] initWithArray:anArray];
+
+  [self.tableView reloadData]; // Ejecuta de nuevo el dataSource
+}
+
+-(void)failData{
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                  message:@"Error when loading data"
+                                                 delegate:nil
+                                        cancelButtonTitle:@"LOL that"
+                                        otherButtonTitles:nil];
+  [alert show];
 }
 
 @end

@@ -11,7 +11,7 @@
 + (NSString *)getName {
   
   NSString *query = @"SELECT nombre FROM alumnos WHERE email = 'pablo@pabloformoso.com'";
-
+  
   return [SQLiteAccess selectOneValueSQL:query];
 }
 

@@ -18,6 +18,7 @@
 
 
 // Clear the contents of the collected inter-element text.
+// Limpia antes y despues del tag
 - (void) clearContentsOfElement {
 	_contentsOfElement = [[NSMutableString alloc] init];
 }
