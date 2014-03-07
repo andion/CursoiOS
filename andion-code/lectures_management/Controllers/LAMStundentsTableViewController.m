@@ -195,7 +195,7 @@
   NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
 #endif  
 // Carga asíncrona de datos, por lo que tenemos que crear los objetos para almacenarlo
-  _stundents = [[NSMutableArray alloc] initWithArray:anArray];
+  _stundents = [NSMutableArray arrayWithArray:anArray];
 
   [self.tableView reloadData]; // Ejecuta de nuevo el dataSource
 }
